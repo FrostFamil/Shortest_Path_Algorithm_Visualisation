@@ -1,6 +1,26 @@
 .node {
     width: 35px;
     height: 35px;
-    outline: 1px solid gray;
+    outline: 1px solid rgb(175, 216, 248);
     display: inline-block;
-}
+  }
+  
+  .node-finish {
+    background-color: red;
+  }
+  
+  .node-start {
+    background-color: green;
+  }
+  
+  .node-visited {
+    background-color: rgb(0, 204, 255);
+  }
+  
+  .node-wall {
+    background-color: rgb(12, 53, 71);
+  }
+  
+  .node-shortest-path {
+    background-color: orange;
+  }
