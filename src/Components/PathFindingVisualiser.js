@@ -104,7 +104,7 @@ function PathFindingVisualiser() {
       <h2>Finding Shortes Path</h2>
 
       <h4 style={{display: 'flex', justifyContent: 'flex-start', marginLeft: '80px'}}>
-        Press any node with mouse to add wall
+        Press any node using mouse to add wall
       </h4>
 
       <button style={{marginBottom: '20px'}} onClick={() => visualizeDijkstra()}>
