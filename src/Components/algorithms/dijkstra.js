@@ -8,6 +8,7 @@ export function dijkstra(grid, startNode, finishNode) {
     const unvisitedNodes = getAllNodes(grid);
     while (!!unvisitedNodes.length) {
       sortNodesByDistance(unvisitedNodes);
+      //shift gets the first element
       const closestNode = unvisitedNodes.shift();
       // If we encounter a wall, we skip it.
       if (closestNode.isWall) continue;
@@ -37,8 +38,10 @@ export function dijkstra(grid, startNode, finishNode) {
     const neighbors = [];
     const {col, row} = node;
     if (row > 0) neighbors.push(grid[row - 1][col]);
+    //grid.length is length of Row
     if (row < grid.length - 1) neighbors.push(grid[row + 1][col]);
     if (col > 0) neighbors.push(grid[row][col - 1]);
+    //grid[0].length is length of Col
     if (col < grid[0].length - 1) neighbors.push(grid[row][col + 1]);
     return neighbors.filter(neighbor => !neighbor.isVisited);
   }
@@ -59,6 +62,7 @@ export function dijkstra(grid, startNode, finishNode) {
     const nodesInShortestPathOrder = [];
     let currentNode = finishNode;
     while (currentNode !== null) {
+      //unshift adds one or more elemtents to begining of array
       nodesInShortestPathOrder.unshift(currentNode);
       currentNode = currentNode.previousNode;
     }

@@ -14,7 +14,7 @@ function PathFindingVisualiser() {
 
   const getInitialGrid = () => {
     const grid = [];
-    for (let row = 0; row < 20; row++) {
+    for (let row = 0; row < 18; row++) {
       const currentRow = [];
       for (let col = 0; col < 50; col++) {
         currentRow.push(createNode(col, row));
@@ -102,9 +102,15 @@ function PathFindingVisualiser() {
   return (
     <div>
       <h2>Finding Shortes Path</h2>
+
+      <h4 style={{display: 'flex', justifyContent: 'flex-start', marginLeft: '80px'}}>
+        Press any node with mouse to add wall
+      </h4>
+
       <button style={{marginBottom: '20px'}} onClick={() => visualizeDijkstra()}>
           Visualize Dijkstra's Algorithm
-        </button>
+      </button>
+
       {grid.map((row, rowIndex) => {
           return (
             <div key={rowIndex}>
